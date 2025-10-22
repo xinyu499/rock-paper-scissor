@@ -3,10 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="javascript.js"></script>
+    <title>Rock-Paper-Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="javascript.js" defer></script>
 </head>
+
 <body>
+
+
     
+    <h1 id="header">Rock-Paper-Scissors</h1>
+
+    <div id="container">
+        <button class="btn" id="play">Play Game</button>
+    </div>
+
+
+    <!-- This part will appear after user click Play Game button -->
+    <div id="game">
+    
+        <!-- This part is to keep the score of player and computer -->
+        <div id="score">
+            <h4 id="player">PLayer Score: </h4>
+            <h4 id="computer">Computer Score: </h4>
+        </div>
+
+        
+        <!-- This part is to show the choice of the user and the computer -->
+        <div id="imageSpot">
+            <img id="playerImage" src="" alt="Your Image" width="200">
+            <img id="computerImage" src="" alt="Your Image" width="200">
+        </div>
+
+
+        <!-- This part is the rock paper scissor button -->
+        <div id="rps">
+            <button id="rock"></button>
+            <button id="paper"></button>
+            <button id="scissors"></button>
+        </div>
+
+    </div>
+
+
+
 </body>
+
+
 </html>

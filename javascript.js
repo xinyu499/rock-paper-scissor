@@ -44,6 +44,7 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
+/*
 function playGame(){
 
     for(let i = 0; i < 5; i++){
@@ -65,4 +66,17 @@ function playGame(){
 }
 
 playGame();
+*/
 
+
+
+
+
+const play = document.querySelector("#play");
+
+function start(){
+    play.style.display = "none";
+    
+}
+
+play.addEventListener("click", start);

@@ -1,0 +1,101 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+@font-face{
+    font-family: 'MyFont';
+    src: url('font/MyFont.ttf') format('truetype');
+}
+
+body{
+    background-image: url(image/background.jpeg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: 'MyFont', sans-serif;
+    color:white;
+}
+
+.btn{
+    font-family: 'MyFont', sans-serif;
+}
+
+
+#header{
+    text-align:center;
+    font-size: 60px;
+}
+
+#container{
+    text-align:center;
+}
+
+#play{
+    width:140px;
+    height:80px;
+    font-size:36px
+}
+
+#score{
+    display:flex;
+    font-size:25px;
+    justify-content:center;
+    gap:55vw;
+}
+
+#imageSpot{
+    display:flex;
+    justify-content:center;
+    gap:55vw;
+    height: 300px;
+}
+
+#playerImage{
+    display:none;
+}
+
+#computerImage{
+    display:none;
+}
+
+
+
+
+#rps{
+    display:flex;
+    justify-content:center;
+    padding-top:90px;
+    gap:20vw;
+}
+
+#rock{
+    width:120px;
+    height:120px;
+    background-image: url('image/rock.jpeg');
+    background-size:cover;
+    background-position:center;
+}
+
+#paper{
+    width:120px;
+    height:120px;
+    background-image: url('image/paper.jpeg');
+    background-size:cover;
+    background-position:center;
+}
+
+#scissors{
+    width:120px;
+    height:120px;
+    background-image: url('image/scissors.jpeg');
+    background-size:cover;
+    background-position:center;
+}
+
+
+
+
