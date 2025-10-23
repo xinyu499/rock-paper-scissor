@@ -13,70 +13,84 @@ function getComputerChoice(){
 }
 
 function getHumanChoice(){
-    let choice = prompt("Pick rock, paper, or scissors");
-    return choice;
+
 }
+
 
 function playRound(humanChoice, computerChoice){
     humanChoice = humanChoice.toLowerCase();
     computerChoice = computerChoice.toLowerCase();
 
-    if(humanChoice === computerChoice){
-        console.log(`It's a Tie! both picked ${humanChoice}`);
-    }else if(humanChoice === "rock" && computerChoice === "paper"){
-        console.log("You lose! Paper beats Rock.");
-        computerScore++;
-    }else if(humanChoice === "rock" && computerChoice === "scissors"){
-        console.log("You win! Rock beats Scissors");
+    if(humanChoice == "rock" && computerChoice == "scissors" || humanChoice == "paper" && computerChoice == "rock" || humanChoice == "scissors" && computerChoice == "paper"){
         humanScore++;
-    }else if(humanChoice === "paper" && computerChoice === "scissors"){
-        console.log("You lose! Scissors beats paper.");
-        computerScore++;
-    }else if(humanChoice === "paper" && computerChoice === "rock"){
-        console.log("You win! Paper beats Rock");
-        humanScore++;
-    }else if(humanChoice === "scissors" && computerChoice === "rock"){
-        console.log("You lose! Rock beats Scissors.");
-        computerScore++;
-    }else if(humanChoice === "scissors" && computerChoice === "paper"){
-        console.log("You win! Scissors beats Paper");
-        humanScore++;
+    }else{
+        if(humanChoice != computerChoice){
+            computerScore++;
+        }
+    }
+
+    document.querySelector("#PS").textContent = humanScore;
+    document.querySelector("#CS").textContent = computerScore;
+}
+
+
+function handleClick(choice){
+    const computerChoice = getComputerChoice();
+    playRound(choice, computerChoice);
+
+    playerIMG.src = `image/${choice}.jpeg`;
+    computerIMG.src = `image/${computerChoice}.jpeg`;
+    playerIMG.style.display = "block";
+    computerIMG.style.display = "block";
+
+    stop(humanScore, computerScore);
+}
+
+
+function stop() {
+    if (humanScore === 5) {
+        win.style.display = "block";
+        lose.style.display = "none";
+        resetGame();
+    } 
+    else if (computerScore === 5) {
+        lose.style.display = "block";
+        win.style.display = "none";
+        resetGame();
     }
 }
 
-/*
-function playGame(){
-
-    for(let i = 0; i < 5; i++){
-        let cc = getComputerChoice();
-        let hc = getHumanChoice();
-        playRound(hc, cc);
-    }
-    console.log(`Your Score: ${humanScore}`);
-    console.log(`Computer Score: ${computerScore}`);
-    if(humanScore > computerScore){
-        console.log("You Win");
-    }else if(computerScore > humanScore){
-        console.log("You Lose");
-    }else{
-        console.log("Tied Game!");
-    }
+function resetGame() {
     humanScore = 0;
     computerScore = 0;
-}
 
-playGame();
-*/
+    play.style.display = "block";
+    game.style.display = "none";
+
+    document.querySelector("#PS").textContent = humanScore;
+    document.querySelector("#CS").textContent = computerScore;
+}
 
 
 
 
 
 const play = document.querySelector("#play");
+const game = document.querySelector("#game");
 
 function start(){
     play.style.display = "none";
-    
+    game.style.display = "block";
 }
 
 play.addEventListener("click", start);
+
+document.getElementById("rock").addEventListener("click", () => handleClick("rock"));
+document.getElementById("paper").addEventListener("click", () => handleClick("paper"));
+document.getElementById("scissors").addEventListener("click", () => handleClick("scissors"));
+const playerIMG = document.getElementById("playerImage");
+const computerIMG = document.getElementById("computerImage");
+
+const win = document.querySelector("#win");
+const lose = document.querySelector("#lose");
+

@@ -15,7 +15,9 @@
     <h1 id="header">Rock-Paper-Scissors</h1>
 
     <div id="container">
-        <button class="btn" id="play">Play Game</button>
+        <button id="play">Play Game</button>
+        <h1 id="win">You Win!</h1>
+        <h1 id="lose">You Lose!</h1>
     </div>
 
 
@@ -24,8 +26,8 @@
     
         <!-- This part is to keep the score of player and computer -->
         <div id="score">
-            <h4 id="player">PLayer Score: </h4>
-            <h4 id="computer">Computer Score: </h4>
+            <h4 id="player">PLayer Score: <span id="PS">0</span> </h4>
+            <h4 id="computer">Computer Score: <span id="CS">0</span></h4>
         </div>
 
         
@@ -38,9 +40,9 @@
 
         <!-- This part is the rock paper scissor button -->
         <div id="rps">
-            <button id="rock"></button>
-            <button id="paper"></button>
-            <button id="scissors"></button>
+            <button class="btn" id="rock"></button>
+            <button class="btn" id="paper"></button>
+            <button class="btn" id="scissors"></button>
         </div>
 
     </div>

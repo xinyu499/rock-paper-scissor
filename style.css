@@ -20,8 +20,18 @@ body{
     color:white;
 }
 
-.btn{
-    font-family: 'MyFont', sans-serif;
+#game{
+    display:none;
+}
+
+#win{
+    color:red;
+    display:none;
+}
+
+#lose{
+    color:red;
+    display:none;
 }
 
 
@@ -35,6 +45,7 @@ body{
 }
 
 #play{
+    font-family: 'MyFont', sans-serif;
     width:140px;
     height:80px;
     font-size:36px
@@ -63,8 +74,6 @@ body{
 }
 
 
-
-
 #rps{
     display:flex;
     justify-content:center;
@@ -72,28 +81,24 @@ body{
     gap:20vw;
 }
 
-#rock{
+.btn{
+    font-family: 'MyFont', sans-serif;
     width:120px;
     height:120px;
-    background-image: url('image/rock.jpeg');
     background-size:cover;
     background-position:center;
+}
+
+#rock{
+    background-image: url('image/rock.jpeg');
 }
 
 #paper{
-    width:120px;
-    height:120px;
     background-image: url('image/paper.jpeg');
-    background-size:cover;
-    background-position:center;
 }
 
 #scissors{
-    width:120px;
-    height:120px;
     background-image: url('image/scissors.jpeg');
-    background-size:cover;
-    background-position:center;
 }
 
 
